@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   Community.init(
     {
-      name: DataTypes.STRING,
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       planetId: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
