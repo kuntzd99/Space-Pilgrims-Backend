@@ -9,13 +9,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Traveler.belongsTo(models.Community, { foreignKey: 'communityId' })
     }
   }
   Traveler.init(
     {
       username: DataTypes.STRING,
       passwordDigest: DataTypes.STRING,
-      communityId: DataTypes.INTEGER,
+      communityId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'communities',
+          key: 'id'
+        }
+      },
       admin: DataTypes.BOOLEAN
     },
     {
