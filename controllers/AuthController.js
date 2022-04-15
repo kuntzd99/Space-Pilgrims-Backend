@@ -1,6 +1,7 @@
 const { Planet, Pilgrim, Community } = require('../models')
 const middleware = require('../middleware')
 
+// Login to pilgrim account
 const Login = async (req, res) => {
   try {
     const pilgrim = await Pilgrim.findOne({
@@ -30,6 +31,19 @@ const Login = async (req, res) => {
   }
 }
 
+// Register to become a pilgrim!
+const Register = async (req, res) => {
+  try {
+    const { email, password, name } = req.body
+    let passwordDigest = await middleware.hashPassword(password)
+    const user = await User.create({ email, passwordDigest, name })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
-  Login
+  Login,
+  Register
 }
