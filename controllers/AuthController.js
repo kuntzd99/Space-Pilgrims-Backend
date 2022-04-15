@@ -1,5 +1,6 @@
 const { Planet, Pilgrim, Community } = require('../models')
 const middleware = require('../middleware')
+const { user } = require('pg/lib/defaults')
 
 // Login to pilgrim account
 const Login = async (req, res) => {
@@ -43,7 +44,39 @@ const Register = async (req, res) => {
   }
 }
 
+// Update password
+
+const UpdatePassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword } = req.body
+    const pilgrim = await Pilgrim.findByPk(req.params.pilgrim_id)
+    if (
+      pilgrim &&
+      (await middleware.comparePassword(
+        pilgrim.dataValues.passwordDigest,
+        oldPassword
+      ))
+    ) {
+      let passwordDigest = await middleware.hashPassword(newPassword)
+      await pilgrim.update({ passwordDigest })
+      return res.send({ status: 'You got it!', payload: pilgrim })
+    }
+    res
+      .status(401)
+      .send({ status: 'Uh-oh, try again!', msg: "You can't do that!" })
+  } catch (error) {
+    throw error
+  }
+}
+
+const CheckSession = async (req, res) => {
+  const { payload } = res.locals
+  res.send(payload)
+}
+
 module.exports = {
   Login,
-  Register
+  Register,
+  UpdatePassword,
+  CheckSession
 }
