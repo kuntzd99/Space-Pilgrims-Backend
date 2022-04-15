@@ -34,10 +34,10 @@ const Login = async (req, res) => {
 // Register to become a pilgrim!
 const Register = async (req, res) => {
   try {
-    const { email, password, name } = req.body
+    const { username, password, email } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    const user = await User.create({ email, passwordDigest, name })
-    res.send(user)
+    const pilgrim = await Pilgrim.create({ username, passwordDigest, email })
+    res.send(pilgrim)
   } catch (error) {
     throw error
   }
