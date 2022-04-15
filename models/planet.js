@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Planet.hasMany(models.Community, { foreignKey: 'planetId' })
     }
   }
   Planet.init(

@@ -9,12 +9,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Community.belongsTo(models.Planet, { foreignKey: 'planetId' })
+      Community.hasMany(models.Traveler, { foreignKey: 'communityId' })
     }
   }
   Community.init(
     {
       name: DataTypes.STRING,
-      planetId: DataTypes.INTEGER
+      planetId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'planets',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
