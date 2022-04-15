@@ -14,8 +14,26 @@ module.exports = (sequelize, DataTypes) => {
   }
   Pilgrim.init(
     {
-      username: DataTypes.STRING,
-      passwordDigest: DataTypes.STRING,
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isAlphanumeric: true
+        }
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true
+        }
+      },
+      passwordDigest: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       communityId: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
