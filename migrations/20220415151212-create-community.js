@@ -12,7 +12,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       planetId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'planets',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

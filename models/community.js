@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Community.belongsTo(models.Planet, { foreignKey: 'planetId' })
-      Community.hasMany(models.Traveler, { foreignKey: 'communityId' })
+      Community.hasMany(models.Pilgrim, { foreignKey: 'communityId' })
     }
   }
   Community.init(

@@ -1,7 +1,7 @@
 'use strict'
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('travelers', {
+    await queryInterface.createTable('pilgrims', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,7 +15,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       communityId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'communities',
+          key: 'id'
+        }
       },
       image: {
         type: Sequelize.STRING
@@ -34,6 +39,6 @@ module.exports = {
     })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('travelers')
+    await queryInterface.dropTable('pilgrims')
   }
 }
