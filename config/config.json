@@ -5,12 +5,12 @@
     "dialect": "postgres"
   },
   "test": {
-    "database": "sequelize_queries_lesson_test",
+    "database": "sequelize_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "sequelize_queries_lesson_production",
+    "database": "sequelize_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
