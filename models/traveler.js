@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
+      image: DataTypes.String,
       admin: DataTypes.BOOLEAN
     },
     {
