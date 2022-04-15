@@ -20,5 +20,6 @@ const GetPlanetById = async (req, res) => {
 }
 
 module.exports = {
-  GetPlanets
+  GetPlanets,
+  GetPlanetById
 }
