@@ -12,6 +12,16 @@ const GetCommunitiesByPlanet = async (req, res) => {
   }
 }
 
+const GetCommunityById = async (req, res) => {
+  try {
+    let communityId = parseInt(req.params.community_id)
+    const community = await Community.findByPk(communityId)
+    res.send(community)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateCommunity = async (req, res) => {
   try {
     let planetId = parseInt(req.params.planet_id)
@@ -56,5 +66,6 @@ module.exports = {
   GetCommunitiesByPlanet,
   CreateCommunity,
   UpdateCommunity,
-  DeleteCommunity
+  DeleteCommunity,
+  GetCommunityById
 }
