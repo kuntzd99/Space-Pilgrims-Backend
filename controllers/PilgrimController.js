@@ -12,6 +12,20 @@ const GetPilgrimsByCommunity = async (req, res) => {
   }
 }
 
+const UpdatePilgrim = async (req, res) => {
+  try {
+    let pilgrimId = parseInt(req.params.pilgrim_id)
+    let updatedPilgrim = await Pilgrim.update(req.body, {
+      where: { id: pilgrimId },
+      returning: true
+    })
+    res.send(updatedPilgrim)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
-  GetPilgrimsByCommunity
+  GetPilgrimsByCommunity,
+  UpdatePilgrim
 }
