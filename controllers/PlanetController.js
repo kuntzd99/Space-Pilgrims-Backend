@@ -19,7 +19,21 @@ const GetPlanetById = async (req, res) => {
   }
 }
 
+const UpdatePlanet = async (req, res) => {
+  try {
+    let planetId = parseInt(req.params.planet_id)
+    let updatedPlanet = await Planet.update(req.body, {
+      where: { id: planetId },
+      returning: true
+    })
+    res.send(updatedPlanet)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetPlanets,
-  GetPlanetById
+  GetPlanetById,
+  UpdatePlanet
 }
