@@ -11,7 +11,7 @@ module.exports = {
         orbit: 15,
         size: 30,
         speed: 10,
-        index: 9,
+        zIndex: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -23,7 +23,7 @@ module.exports = {
         orbit: 20,
         size: 33,
         speed: 15,
-        index: 8,
+        zIndex: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -35,7 +35,7 @@ module.exports = {
         orbit: 25,
         size: 33,
         speed: 20,
-        index: 7,
+        zIndex: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -47,7 +47,7 @@ module.exports = {
         orbit: 30,
         size: 30,
         speed: 15,
-        index: 6,
+        zIndex: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -59,7 +59,7 @@ module.exports = {
         orbit: 35,
         size: 50,
         speed: 40,
-        index: 5,
+        zIndex: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -71,7 +71,7 @@ module.exports = {
         orbit: 40,
         size: 45,
         speed: 45,
-        index: 4,
+        zIndex: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -83,7 +83,7 @@ module.exports = {
         orbit: 45,
         size: 35,
         speed: 60,
-        index: 3,
+        zIndex: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -95,7 +95,7 @@ module.exports = {
         orbit: 50,
         size: 35,
         speed: 85,
-        index: 2,
+        zIndex: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -107,7 +107,7 @@ module.exports = {
         orbit: 55,
         size: 40,
         speed: 95,
-        index: 1,
+        zIndex: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }

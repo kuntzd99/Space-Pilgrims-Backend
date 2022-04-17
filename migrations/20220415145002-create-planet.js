@@ -31,7 +31,7 @@ module.exports = {
       speed: {
         type: Sequelize.INTEGER
       },
-      index: {
+      zIndex: {
         type: Sequelize.INTEGER
       },
       createdAt: {

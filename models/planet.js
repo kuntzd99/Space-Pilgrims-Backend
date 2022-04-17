@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       orbit: DataTypes.INTEGER,
       size: DataTypes.INTEGER,
       speed: DataTypes.INTEGER,
-      index: DataTypes.INTEGER
+      zIndex: DataTypes.INTEGER
     },
     {
       sequelize,
