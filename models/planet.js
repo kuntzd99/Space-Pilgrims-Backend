@@ -23,7 +23,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      population: DataTypes.INTEGER
+      population: DataTypes.INTEGER,
+      orbit: DataTypes.INTEGER,
+      size: DataTypes.INTEGER,
+      speed: DataTypes.INTEGER,
+      index: DataTypes.INTEGER
     },
     {
       sequelize,
