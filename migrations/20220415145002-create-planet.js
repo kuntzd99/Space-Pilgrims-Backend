@@ -22,6 +22,18 @@ module.exports = {
       population: {
         type: Sequelize.INTEGER
       },
+      orbit: {
+        type: Sequelize.INTEGER
+      },
+      size: {
+        type: Sequelize.INTEGER
+      },
+      speed: {
+        type: Sequelize.INTEGER
+      },
+      index: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
