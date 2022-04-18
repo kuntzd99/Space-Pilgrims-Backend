@@ -24,6 +24,10 @@ module.exports = {
           key: 'id'
         }
       },
+      population: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       primaryColor: {
         type: Sequelize.STRING,
         allowNull: false

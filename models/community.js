@@ -31,6 +31,10 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
+      population: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
       primaryColor: {
         type: DataTypes.STRING,
         allowNull: false
