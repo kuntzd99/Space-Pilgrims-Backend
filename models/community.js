@@ -30,6 +30,14 @@ module.exports = (sequelize, DataTypes) => {
           model: 'planets',
           key: 'id'
         }
+      },
+      primaryColor: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      secondaryColor: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
     },
     {
