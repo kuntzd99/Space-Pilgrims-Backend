@@ -43,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       image: DataTypes.STRING,
+      bio: DataTypes.STRING,
       admin: DataTypes.BOOLEAN
     },
     {
