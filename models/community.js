@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Community.belongsTo(models.Planet, { foreignKey: 'planetId' })
       Community.hasMany(models.Pilgrim, { foreignKey: 'communityId' })
+      Community.hasMany(models.Comment, { foreignKey: 'communityId' })
     }
   }
   Community.init(

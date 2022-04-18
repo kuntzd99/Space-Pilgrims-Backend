@@ -12,6 +12,16 @@ const GetPilgrimsByCommunity = async (req, res) => {
   }
 }
 
+const GetPilgrimById = async (req, res) => {
+  try {
+    let pilgrimId = parseInt(req.params.pilgrim_id)
+    const pilgrim = await Pilgrim.findByPk(pilgrimId)
+    res.send(pilgrim)
+  } catch (error) {
+    throw error
+  }
+}
+
 const UpdatePilgrim = async (req, res) => {
   try {
     let pilgrimId = parseInt(req.params.pilgrim_id)
@@ -27,5 +37,6 @@ const UpdatePilgrim = async (req, res) => {
 
 module.exports = {
   GetPilgrimsByCommunity,
-  UpdatePilgrim
+  UpdatePilgrim,
+  GetPilgrimById
 }
