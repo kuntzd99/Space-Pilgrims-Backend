@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Pilgrim.belongsTo(models.Community, { foreignKey: 'communityId' })
+      Pilgrim.hasMany(models.Comment, { foreignKey: 'pilgrimId' })
     }
   }
   Pilgrim.init(
