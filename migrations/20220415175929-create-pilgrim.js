@@ -39,6 +39,9 @@ module.exports = {
       image: {
         type: Sequelize.STRING
       },
+      bio: {
+        type: Sequelize.STRING
+      },
       admin: {
         type: Sequelize.BOOLEAN
       },
