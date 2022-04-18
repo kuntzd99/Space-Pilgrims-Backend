@@ -28,7 +28,18 @@ const CreateComment = async (req, res) => {
   }
 }
 
+const DeleteComment = async (req, res) => {
+  try {
+    let commentId = parseInt(req.params.comment_id)
+    await Comment.destroy({ where: { id: commentId } })
+    res.send({ message: `Deleted comment with an id of ${commentId}` })
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetCommentsByCommunity,
-  CreateComment
+  CreateComment,
+  DeleteComment
 }
