@@ -24,6 +24,14 @@ module.exports = {
           key: 'id'
         }
       },
+      primaryColor: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      secondaryColor: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
