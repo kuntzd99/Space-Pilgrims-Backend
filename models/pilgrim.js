@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       image: DataTypes.STRING,
-      bio: DataTypes.STRING,
+      bio: DataTypes.TEXT,
       admin: DataTypes.BOOLEAN
     },
     {
