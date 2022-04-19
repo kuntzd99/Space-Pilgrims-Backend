@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       Community.belongsTo(models.Planet, { foreignKey: 'planetId' })
       Community.hasMany(models.Pilgrim, { foreignKey: 'communityId' })
       Community.hasMany(models.Comment, { foreignKey: 'communityId' })
+      Community.belongsTo(models.Pilgrim, { foreignKey: 'creatorId' })
     }
   }
   Community.init(
@@ -29,6 +30,14 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         references: {
           model: 'planets',
+          key: 'id'
+        }
+      },
+      creatorId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'pilgrims',
           key: 'id'
         }
       },

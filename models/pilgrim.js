@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Pilgrim.belongsTo(models.Community, { foreignKey: 'communityId' })
       Pilgrim.hasMany(models.Comment, { foreignKey: 'pilgrimId' })
+      Pilgrim.hasMany(models.Message, { foreignKey: 'sentTo' })
+      Pilgrim.hasMany(models.Message, { foreignKey: 'sentFrom' })
+      Pilgrim.hasMany(models.Community, { foreignKey: 'creatorId' })
     }
   }
   Pilgrim.init(
