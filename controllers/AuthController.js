@@ -35,6 +35,48 @@ const Login = async (req, res) => {
   }
 }
 
+// Login Admin Account
+
+const LoginAdmin = async (req, res) => {
+  try {
+    const pilgrim = await Pilgrim.findOne({
+      where: { username: req.body.username },
+      where: { admin: req.body.admin },
+      raw: true
+    })
+    if (
+      pilgrim &&
+      (await middleware.comparePassword(
+        pilgrim.passwordDigest,
+        req.body.password
+      ))
+    ) {
+      let payload = {
+        id: pilgrim.id,
+        username: pilgrim.username,
+        image: pilgrim.image,
+        bio: pilgrim.bio,
+        admin: pilgrim.admin,
+        communityId: pilgrim.communityId
+      }
+      console.log(payload)
+      let token = middleware.createAdminToken(payload)
+
+      // if (token) {
+      //   // console.log(payload.admin)
+      //   admin = true
+      // }
+      return res.send({ user: payload, token })
+    }
+    res.status(401).send({
+      status: 'Error',
+      msg: 'You are not authorized to enter this page. Please vacate immediately!'
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
 // Register to become a pilgrim!
 const Register = async (req, res) => {
   try {
@@ -109,6 +151,7 @@ const CheckSession = async (req, res) => {
 
 module.exports = {
   Login,
+  LoginAdmin,
   Register,
   UpdatePassword,
   CheckSession
