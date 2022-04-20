@@ -14,6 +14,23 @@ const PostRating = async (req, res) => {
   }
 }
 
+const GetAverageRating = async (req, res) => {
+  try {
+    let planetId = parseInt(req.params.planet_id)
+    let ratingArray = []
+    let sum = 0
+    let ratings = await Rating.findAll({
+      where: { planetId: planetId }
+    })
+    ratings.map((rating) => ratingArray.push(rating.rating))
+
+    res.send(ratingArray)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
-  PostRating
+  PostRating,
+  GetAverageRating
 }
