@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Planet.hasMany(models.Community, { foreignKey: 'planetId' })
       Planet.hasMany(models.Rating, { foreignKey: 'planetId' })
+      Planet.hasMany(models.PlanetImage, { foreignKey: 'planetId' })
     }
   }
   Planet.init(
@@ -24,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false
       },
+      highRes: DataTypes.TEXT,
       population: DataTypes.INTEGER,
       orbit: DataTypes.INTEGER,
       size: DataTypes.INTEGER,

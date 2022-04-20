@@ -19,6 +19,9 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      highRes: {
+        type: Sequelize.TEXT
+      },
       population: {
         type: Sequelize.INTEGER
       },
