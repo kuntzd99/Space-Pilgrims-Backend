@@ -19,9 +19,12 @@ const Login = async (req, res) => {
       let payload = {
         id: pilgrim.id,
         username: pilgrim.username,
+        name: pilgrim.name,
+        email: pilgrim.email,
+        communityId: pilgrim.communityId,
         image: pilgrim.image,
         bio: pilgrim.bio,
-        communityId: pilgrim.communityId
+        admin: pilgrim.admin
       }
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
@@ -38,15 +41,15 @@ const Login = async (req, res) => {
 // Register to become a pilgrim!
 const Register = async (req, res) => {
   try {
-    const { username, name, image, bio, email, password } = req.body
+    const { username, name, email, password, image, bio } = req.body
     let passwordDigest = await middleware.hashPassword(password)
     const pilgrim = await Pilgrim.create({
       username,
       name,
-      image,
-      bio,
       email,
-      passwordDigest
+      passwordDigest,
+      image,
+      bio
     })
     res.send(pilgrim)
   } catch (error) {
