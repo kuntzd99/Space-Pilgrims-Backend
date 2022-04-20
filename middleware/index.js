@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const APP_SECRET = process.env.APP_SECRET
-const ADMIN_SECRET = process.env.ADMIN_SECRET
 
 // Create a function to hash password and encrypt it
 const hashPassword = async (password) => {
