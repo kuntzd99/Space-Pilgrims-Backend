@@ -23,29 +23,10 @@ const createToken = (payload) => {
   return token
 }
 
-// Create Admin Token
-
-const createAdminToken = (payload) => {
-  let token = jwt.sign(payload, ADMIN_SECRET)
-  return token
-}
-
 // Create a function to verify if token is legit or not. On true, it passes the decoded payload to the next function
 const verifyToken = (req, res, next) => {
   const { token } = res.locals
   let payload = jwt.verify(token, APP_SECRET)
-  if (payload) {
-    res.locals.payload = payload
-    return next()
-  }
-  res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
-}
-
-// Create Admin Account
-
-const verifyAdminToken = (req, res, next) => {
-  const { token } = res.locals
-  let payload = jwt.verify(token, ADMIN_SECRET)
   if (payload) {
     res.locals.payload = payload
     return next()
@@ -69,9 +50,7 @@ const stripToken = (req, res, next) => {
 module.exports = {
   stripToken,
   verifyToken,
-  verifyAdminToken,
   createToken,
-  createAdminToken,
   comparePassword,
   hashPassword
 }
