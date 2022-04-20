@@ -5,5 +5,6 @@ const middleware = require('../middleware')
 router.get('/:community_id', controller.GetPilgrimsByCommunity)
 router.get('/pilgrims/:pilgrim_id', controller.GetPilgrimById)
 router.put('/:pilgrim_id', controller.UpdatePilgrim)
+router.get('/', controller.GetAllPilgrims)
 
 module.exports = router
