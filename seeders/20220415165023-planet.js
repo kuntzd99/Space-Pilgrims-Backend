@@ -5,6 +5,7 @@ module.exports = {
     let planets = [
       {
         name: 'Mercury',
+        frenchName: 'mercure',
         description: '',
         image: 'https://i.ibb.co/NYXdCM9/mercury.jpg',
         highRes: 'https://i.ibb.co/MCHVq1c/Untitled-design-24.png',
@@ -18,6 +19,7 @@ module.exports = {
       },
       {
         name: 'Venus',
+        frenchName: 'venus',
         description: '',
         image: 'https://i.ibb.co/rmVDk3p/venus.jpg',
         highRes: 'https://i.ibb.co/87GNJQB/Untitled-design-13.png',
@@ -31,6 +33,7 @@ module.exports = {
       },
       {
         name: 'Earth',
+        frenchName: 'terre',
         description: '',
         image: 'https://i.ibb.co/c3bbR1m/earth.jpg',
         highRes: 'https://i.ibb.co/BNq3Jn8/Untitled-design-11.png',
@@ -44,6 +47,7 @@ module.exports = {
       },
       {
         name: 'Mars',
+        frenchName: 'mars',
         description: '',
         image: 'https://i.ibb.co/P6fZjNn/mars.jpg',
         highRes: 'https://i.ibb.co/2nqhWHd/Untitled-design-14.png',
@@ -57,6 +61,7 @@ module.exports = {
       },
       {
         name: 'Jupiter',
+        frenchName: 'jupiter',
         description: '',
         image: 'https://i.ibb.co/MGSW8B0/jupiter.jpg',
         highRes: 'https://i.ibb.co/cN32xg6/Untitled-design-21.png',
@@ -70,6 +75,7 @@ module.exports = {
       },
       {
         name: 'Saturn',
+        frenchName: 'saturne',
         description: '',
         image: 'https://i.ibb.co/X3Wmq2D/saturn.jpg',
         highRes: 'https://i.ibb.co/SnBftkk/Untitled-design-12.png',
@@ -83,6 +89,7 @@ module.exports = {
       },
       {
         name: 'Uranus',
+        frenchName: 'uranus',
         description: '',
         image: 'https://i.ibb.co/nzhcdXW/uranus.jpg',
         highRes: 'https://i.ibb.co/7Gz0vWt/Untitled-design-16.png',
@@ -96,6 +103,7 @@ module.exports = {
       },
       {
         name: 'Neptune',
+        frenchName: 'neptune',
         description: '',
         image: 'https://i.ibb.co/KVmHwhh/neptune.jpg',
         highRes: 'https://i.ibb.co/vBBktVG/Untitled-design-15.png',
@@ -109,6 +117,7 @@ module.exports = {
       },
       {
         name: 'Planet9',
+        frenchName: '',
         description: '',
         image: 'https://i.ibb.co/8rDHxNX/planet9.jpg',
         highRes: 'https://i.ibb.co/g7xGnDk/Untitled-design-23.png',
