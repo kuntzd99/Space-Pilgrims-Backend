@@ -34,6 +34,13 @@ const GetPilgrimById = async (req, res) => {
 const UpdatePilgrim = async (req, res) => {
   try {
     let pilgrimId = parseInt(req.params.pilgrim_id)
+    let pilgrim = await Pilgrim.findByPk(pilgrimId)
+    if (pilgrim.communityId && req.body.communityId) {
+      return null
+    }
+    if (!pilgrim.communityId && !req.body.communityId) {
+      return null
+    }
     let updatedPilgrim = await Pilgrim.update(req.body, {
       where: { id: pilgrimId },
       returning: true
