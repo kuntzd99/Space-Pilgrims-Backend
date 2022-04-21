@@ -12,6 +12,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      frenchName: {
+        type: Sequelize.STRING
+      },
       description: {
         type: Sequelize.TEXT
       },
