@@ -61,10 +61,11 @@ const Register = async (req, res) => {
 
 const UpdatePassword = async (req, res) => {
   try {
-    const { oldPassword, newPassword } = req.body
+    const { oldPassword, newPassword, confirmNewPassword } = req.body
     const pilgrim = await Pilgrim.findByPk(req.params.pilgrim_id)
     if (
       pilgrim &&
+      newPassword === confirmNewPassword &&
       (await middleware.comparePassword(
         pilgrim.dataValues.passwordDigest,
         oldPassword
