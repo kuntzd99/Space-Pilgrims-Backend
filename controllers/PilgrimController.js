@@ -36,10 +36,10 @@ const UpdatePilgrim = async (req, res) => {
     let pilgrimId = parseInt(req.params.pilgrim_id)
     let pilgrim = await Pilgrim.findByPk(pilgrimId)
     if (pilgrim.communityId && req.body.communityId) {
-      return null
+      return res.send(null)
     }
     if (!pilgrim.communityId && !req.body.communityId) {
-      return null
+      return res.send(null)
     }
     let updatedPilgrim = await Pilgrim.update(req.body, {
       where: { id: pilgrimId },
