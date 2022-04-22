@@ -57,3 +57,5 @@ Go to the website, register an account, log in, and click on a planet. From ther
 [Default Pilgrim Image](https://www.clipartmax.com/png/middle/49-492189_thanksgiving-pilgrim-cartoon.png)
 
 [Default Community Image](https://banner.holidaypng.com/20191015/ugw/thanksgiving-cartoon-pumpkin-for-thanksgiving-5da595af2a2601.98162897.png)
+
+
