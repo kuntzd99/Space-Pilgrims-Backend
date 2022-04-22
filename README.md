@@ -52,10 +52,16 @@ Go to the website, register an account, log in, and click on a planet. From ther
 
 ---
 
+### **_Future Updates_**
+
+- [ ] Chat box - show message history between two pilgrims
+- [ ] Use an API to show current astronauts in space
+- [ ] Be able to search for a specific pilgrim
+
+---
+
 ### **_Credits_**
 
 [Default Pilgrim Image](https://www.clipartmax.com/png/middle/49-492189_thanksgiving-pilgrim-cartoon.png)
 
 [Default Community Image](https://banner.holidaypng.com/20191015/ugw/thanksgiving-cartoon-pumpkin-for-thanksgiving-5da595af2a2601.98162897.png)
-
-
