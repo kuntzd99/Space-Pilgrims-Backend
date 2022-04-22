@@ -66,7 +66,7 @@ module.exports = {
         image: 'https://i.ibb.co/MGSW8B0/jupiter.jpg',
         highRes: 'https://i.ibb.co/cN32xg6/Untitled-design-21.png',
         population: 0,
-        orbit: 40,
+        orbit: 38,
         size: 50,
         speed: 35,
         zIndex: 5,
