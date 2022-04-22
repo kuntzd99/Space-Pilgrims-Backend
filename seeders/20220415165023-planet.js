@@ -77,7 +77,7 @@ module.exports = {
         name: 'Saturn',
         frenchName: 'saturne',
         description: '',
-        image: 'https://i.ibb.co/X3Wmq2D/saturn.jpg',
+        image: 'https://i.ibb.co/R2zLNFW/Untitled-design-28.png',
         highRes: 'https://i.ibb.co/SnBftkk/Untitled-design-12.png',
         population: 0,
         orbit: 45,
