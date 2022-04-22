@@ -6,6 +6,8 @@
 
 [Trello](https://trello.com/b/M5meLcNJ/space-pilgrims)
 
+[Frontend Repo](https://github.com/kuntzd99/Space-Pilgrims-Frontend)
+
 ---
 
 ### **_Socials_**
