@@ -12,9 +12,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-        validate: {
-          isAlphanumeric: true
-        }
       },
       name: {
         type: Sequelize.STRING,
